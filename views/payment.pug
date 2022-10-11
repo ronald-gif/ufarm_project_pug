@@ -1,0 +1,373 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title payment
+  link(rel='icon' type='image/x-icon' href='/images/favicon.ico')
+  link(rel='stylesheet' href='/bootstrap-5.2.0-dist/css/bootstrap.css')
+  link(rel='stylesheet' href='/styles/main.css')
+  style.
+    .payment-section h1{
+    color: #3db83a;
+    font-weight: 800;
+    text-align: center;
+    padding: 1rem;
+    border-bottom: 1px solid pink;
+    }
+    .payment-section .how-to-pay h4{
+    text-align: left;
+    font-weight: 400;
+    padding: 2px 0 3px 1;
+    color: gray;
+    font-size: 20px;
+    }
+    .payment-section .how-to-pay img{
+    padding: 5px 0px 2px 1rem;
+    }
+    .payment-section .how-to-pay h6{
+    font-size: 17px;
+    color: #3db83a;
+    text-align: left;
+    padding: 3px 0px 7px 1px;
+    font-weight: 500;
+    }
+    .payment-section .how-to-pay .text p{
+    text-align: left;
+    font-weight: lighter;
+    font-size: 12px;
+    color: grey;
+    }
+    .how-to-pay{
+    border-right: 1px solid #3db83a;
+    }
+// nav bar
+nav.navbar.navbar-expand-lg
+  .container-fluid
+    a.navbar-brand(href='index.html#')
+      img(src='/images/onlinelogomaker-091022-1346-6665.png' alt='')
+    button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarSupportedContent.collapse.navbar-collapse
+      ul.navbar-nav.me-auto.mb-2.mb-lg-0
+        li.nav-item
+          a.nav-link.active(aria-current='page' href='/index.html' style='color: #fff;') Home
+        li.nav-item
+          a.nav-link.active(aria-current='page' href='about-us.html' style='color: #fff;') About us
+        li.nav-item.dropdown
+          a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
+            | Categories
+          ul.dropdown-menu
+            li
+              a.dropdown-item(href='/horticulture.html') Horticuture
+            li
+              a.dropdown-item(href='/poultry.html') Poultry
+            li
+              a.dropdown-item(href='/dairy.html') Dairy
+      // modal login
+      .buttonlogin
+        button.btn(type='button' data-bs-toggle='modal' data-bs-target='#ModalForm')
+          | Log in
+        #ModalForm.modal.fade(tabindex='-1' aria-labelledby='ModalFormLabel' aria-hidden='true')
+          .modal-dialog.modal-dialog-centered
+            .modal-content
+              .modal-body
+                button.btn-close.btn-close-white(type='button' data-bs-dismiss='modal' aria-label='Close')
+                .myform.bg-dark
+                  h1.text-center Login
+                  form#myFormToRegister(action='' name='registration')
+                    .mb-3.mt-4
+                      label.form-label(for='exampleInputEmail1') ID
+                      input#exampleInputEmail1.form-control(type='email' aria-describedby='emailHelp')
+                    .mb-3
+                      label.form-label(for='exampleInputPassword1') Password
+                      input#exampleInputPassword1.form-control(type='password')
+                    button.btn-11.btn-light.mt-3(type='submit') LOGIN
+                    p
+                      | Not a member? 
+                      a(href='#') Signup now
+      // second modal sign up
+      // Button trigger modal
+      button.btn(type='button' data-bs-toggle='modal' data-bs-target='#Backdrop')
+        | Sign up
+      // Modal
+      #Backdrop.modal.fade(data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='staticBackdropLabel' aria-hidden='true')
+        .modal-dialog.modal-xl
+          .modal-content
+            .modal-header.mb-2.mt-2
+              h3(style='color: #000;') FarmerOne
+              button.btn(type='button' data-bs-toggle='modal' data-bs-target='#drop')
+                | Urban Farmer
+              button.btn-close.mb-4.pb-4.btn-close-black(type='button' data-bs-dismiss='modal' aria-label='Close')
+            .modal-body(style='color: #000;')
+              // sign up for farmer one
+              form#myFormToRegister(action='#' name='registration')
+                .container.thisForm
+                  .row.mb-4
+                    .col
+                      .form-outline
+                        label.form-label(for='form3Example1') First name:
+                        input#firstName.firstName(type='text')
+                        small.error
+                    .col
+                      .form-outline
+                        label.form-label(for='form3Example1') Second name:
+                        input#secondName.secondName(type='text')
+                        small.error
+                    .col
+                      .form-outline
+                        label.form-label(for='form3Example1') Phone number:
+                        input#telephone.telephone(type='text')
+                        small.error
+                  .row.mb-4
+                    .col
+                      .form-outline
+                        label.form-label(for='currentDate')  Current date:
+                        input#currentDate.currentDate(type='date')
+                    .col
+                      .form-outline
+                        label.form-label(for='exampleInputEmail1') Date of birth:
+                        input#DOB.DOB(type='date')
+                        small.error
+                    .col
+                      .form-outline
+                        label.form-label(for='form3Example1') Unique number:
+                        input#uniqueNumber.uniqueNumber(type='text')
+                        small.error
+                  .row.mb-4
+                    .col
+                      .form-outline
+                        label.form-label(for='exampleInputPassword1') NIN Number:
+                        input#NIN.NIN(type='text')
+                        small.error
+                    .col
+                      .form-outline
+                        label.form-label(for='form3Example1') Location:
+                        input#location.location(type='text')
+                        small.error
+                    .col
+                      .form-outline
+                        label.form-label(for='form3Example1') Residence type:
+                        input#residence.residence(type='text')
+                        small.error
+                  .row.mb-4
+                    .col
+                      .form-field.radio
+                        label(for='gender') Gender:
+                        .radio
+                          input#gender1(type='radio' name='sex' checked='')
+                          span Male
+                          input#gender2(type='radio' name='sex')
+                          span Female
+                    .col-4
+                      .form-o
+                        label(for='ward') Ward
+                        select#my_ward.values-for-wards(name='ward')
+                          option(value='ward1') LC1
+                          option(value='ward2') LC2
+                          option(value='ward3') LC3
+                          option(value='ward4') LC4
+                  .row.mb-4
+                    .col
+                      .form-field.radio
+                        label(for='lang') Activities:
+                        .radio
+                          input#mobile(type='checkbox' name='Luganda' value='language')
+                          span Mobilization
+                          input#supervise(type='checkbox' name='english' value='language')
+                          span Supervision
+                          input#regulate(type='checkbox' name='english' value='language')
+                          span Regulation
+                          input#support(type='checkbox' name='english' value='language')
+                          span Support
+                          small.error
+                  .row.mb-4
+                    .col
+                      .mb-3.form-check
+                        input#exampleCheck1.form-check-input(type='checkbox')
+                        label.form-check-label(for='exampleCheck1') Comfirm
+                      button.btn(type='submit') Submit
+      // another model
+      #drop.modal.fade(data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='staticBackdropLabel' aria-hidden='true')
+        .modal-dialog.modal-xl
+          .modal-content
+            .modal-header.mb-2.mt-2
+              button.btn(type='button' data-bs-toggle='modal' data-bs-target='#Backdrop')
+                | Farmer0ne
+              h3(style='color: #000;') Urban Farmer
+              button.btn-close.mb-4.pb-4.btn-close-black(type='button' data-bs-dismiss='modal' aria-label='Close')
+            .modal-body(style='color: #000;')
+              // sign up for urban farmers
+              form(action='myForm1' name='registration' id='myForm farmerone')
+                .container.thisForm
+                  .row.mb-4
+                    .col
+                      .form-outline
+                        label.form-label(for='form3Example1') First name:
+                        input#firstName.firstName(type='text')
+                        small.error
+                    .col
+                      .form-outline
+                        label.form-label(for='form3Example1') Second name:
+                        input#secondName.secondName(type='text')
+                        small.error
+                    .col
+                      .form-outline
+                        label.form-label(for='form3Example1') Phone number:
+                        input#telephone.telephone(type='text')
+                        small.error
+                  .row.mb-4
+                    .col
+                      .form-outline
+                        label.form-label(for='exampleInputPassword1')  Current date:
+                        input#exampleInputPassword1.form-control(type='date')
+                    .col
+                      .form-outline
+                        label.form-label(for='exampleInputEmail1') Date of birth:
+                        input#DOB.DOM(type='date')
+                        small.error
+                    .col
+                      .form-outline
+                        label.form-label(for='form3Example1') ID:
+                        input#uniqueNumber.uniqueNumber(type='text')
+                        small.error
+                  .row.mb-4
+                    .col
+                      .form-outline
+                        label.form-label(for='exampleInputPassword1') NIN Number:
+                        input#NIN.NIN(type='nin')
+                        small.error
+                    .col
+                      .form-outline
+                        label.form-label(for='form3Example1') Location/Division:
+                        input#location.location(type='text')
+                        small.error
+                    .col
+                      //
+                        <div class="form-outline">
+                        <label class="form-label" for="form3Example1">Residence type:</label>
+                        <input type="text" id="form3Example1" class="form-control" />
+                        </div>
+                  .row.mb-4
+                    .col
+                      .form-field.radio
+                        label(for='gender') Gender:
+                        .radio
+                          input#gender1(type='radio' name='sex' checked='')
+                          span Male
+                          input#gender2(type='radio' name='sex')
+                          span Female
+                    .col-4
+                      .form-o
+                        label(for='ward') Ward
+                        select#my_ward.values-for-wards(name='ward')
+                          option(value='ward1') LC1
+                          option(value='ward2') LC2
+                          option(value='ward3') LC3
+                          option(value='ward4') LC4
+                  .row.mb-4
+                    .col
+                      .form-field.radio
+                        label(for='lang') Activities:
+                        .radio
+                          input#harticulture(type='checkbox' name='Luganda' value='language')
+                          span Horticulture produce
+                          input#poultry(type='checkbox' name='english' value='language')
+                          span Poultry produce
+                          input#dairy(type='checkbox' name='english' value='language')
+                          span Dairy produce
+                          small.error
+                  .row.mb-4
+                    .col
+                      .mb-3.form-check
+                        input#exampleCheck1.form-check-input(type='checkbox')
+                        label.form-check-label(for='exampleCheck1') Comfirm
+                      button.btn(type='submit') Submit
+// nav bar stops here
+// carouse starts here
+.container
+  .row
+    .col
+    .col
+    .col
+// carouse section stops here
+// payment methods section start here
+.payment-section
+  h1 How to pay
+  .container
+    .row
+      .col
+        .how-to-pay
+          h4
+            | Cash on delivery
+            img(src='/images/money.jpg' alt='')
+            .text
+              h6 pay cash when goods are delivered
+              p 1. No risk here, unlike at the store.
+              p 2. You didn&apos;t like what you got, do you? Free return is offered.
+      .col
+        .how-to-pay
+          h4
+            | MTN Mobile money
+            img(src='/images/mtn.png' alt='')
+            .text
+              h6 Secure and quick
+              p 1. Easy, quick, and secure payments.
+              p 2. Make a payment with your Mobile Money account!
+      .col
+        .how-to-pay
+          h4 Airtel Mobile money
+          img(src='/images/Payment_-_Airtel-02.png' alt='')
+          .text
+            h6 Secure and quick
+            p 1. Easy, quick, and secure payments.
+            p 2. Make a payment with your Mobile Money account!
+// payment methods section stops here
+// footer
+footer.footer(id='#foot_last')
+  .container-last
+    .logo
+      a.navbar-brand(href='index.html#')
+        img(src='/images/onlinelogomaker-091022-1346-6665.png' alt='')
+    .payment-method
+      h5 Payment methods
+      ul
+        li
+          a(href='/payment.html')
+            img(src='/images/Payment_-_Airtel-02.png' alt='')
+        li
+          a(href='/payment.html')
+            img(src='/images/mtn.png' alt='')
+        li
+          a(href='payment.html')
+            img(src='/images/money.jpg' alt='')
+    .follow-us
+      h5 Stay with us on
+      ul
+        li
+          a(href='https://www.facebook.com/profile.php?id=100086467246132')
+            img(src='/images/facebook.svg' alt='facebook')
+        li
+          a(href='https://twitter.com/UfarmMasajja')
+            img(src='/images/twitter.svg' alt='twitter')
+        li
+          a(href='https://www.instagram.com/ufarm_masajja/')
+            img(src='/images/square-instagram.svg' alt='square-instagram')
+        //
+          <li>
+          <a href="">
+          <img src="/images/envelope-solid.svg" alt="email ">
+          </a>
+          </li>
+    .support
+      h5 Support
+      ul
+        li
+          a(href='/contact-us.html') Contact us
+        li
+          a(href='/how-to-buy.html') Help
+        li
+          a(href='') Terms and condition
+  .copyright
+    article &amp;copycopyright All rights reserved
+script(src='/bootstrap-5.2.0-dist/js/bootstrap.bundle.js')
